@@ -1,19 +1,34 @@
-const h1 = document.querySelector('h1');
-//selecciono desde mi archivo en Html el o los apartados con la etiqueta h1
-const p = document.querySelector('p');
-// selecciono los apartados con la etiqueta p
-const parrafito = document.querySelector('.parrafito');
-// .parrafito se refiere a la clase parrafito, escoge los apartados asignados a esa clase
-const pid = document.querySelector('#pid')
-//·pid se refiere al ID: pid, me trae los apartados con ese ID
-const input =document.querySelector("input");
+const numero1 = document.getElementById('n1');
+const operacion1 = document.getElementById('op1')
+const numero2 = document.getElementById('n2');
+const boton1 = document.getElementById('b1');
+const parrafo1 = document.querySelector('#p1');
+const h1 = document.querySelector('.h1')
+
 
 console.log(h1);
-console.log({
-    h1,
-    p,
-parrafito,
-pid,
-input,
-});
 
+
+function clikear(){
+    switch(operacion1.value){
+        case "suma":
+            const suma=Number(numero1.value) + Number(numero2.value);
+            parrafo1.innerText ='el resultado es: ' + suma;
+            break;
+        case "resta":
+            const resta=Number(numero1.value) - Number(numero2.value);
+            parrafo1.innerText ='el resultado es: ' + resta;
+            break;
+        case "producto":
+            const producto=Number(numero1.value) * Number(numero2.value);
+            parrafo1.innerText ='el resultado es: ' + producto;
+            break;
+        case "division":
+            const division=Number(numero1.value) / Number(numero2.value);
+            parrafo1.innerText ='el resultado es: ' + division;
+            break;
+        default:
+            parrafo1.innerText ='Su elección es incorrecta' ;
+    }
+  
+} 
